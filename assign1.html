@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shape Changer</title>
+    <style>
+      #shape {
+        width: 200px;
+        height: 200px;
+        background-color: green;
+        border-radius: 0%;
+        transition: border-radius 0.5s;
+      }
+
+      #shape.semi-circle {
+        position: absolute;
+        top: 10%;
+        left: 5%;
+        height: 100px;
+        width: 200px;
+        border-radius: 150px 150px 0 0;
+      }
+
+      button {
+        margin-top: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="shape"></div>
+    <button onclick="changeShape()">Change Shape</button>
+
+    <script>
+      function changeShape() {
+        var shape = document.getElementById("shape");
+        if (shape.classList.contains("semi-circle")) {
+          shape.classList.remove("semi-circle");
+        } else {
+          shape.classList.add("semi-circle");
+        }
+      }
+    </script>
+  </body>
+</html>
